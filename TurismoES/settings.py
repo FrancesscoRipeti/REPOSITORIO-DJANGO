@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'turismo',
+    'calculadora',
 
 ]
 
@@ -117,7 +118,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'calculadora/static'), ]
 STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'turismo/static'), ]
+
 
 STATIC_URL = '/static/'
 
@@ -129,5 +132,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/img/'
 
 # Path where media is stored
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'calculadora/static/img')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'turismo/static/img')
+
