@@ -14,3 +14,9 @@ def index_alumn(request):
     alumnos= Alumno.objects.all()
     context={"alumnos":alumnos}
     return render(request, 'index_alumn.html',context)
+
+def listadoSQL(request):
+    alumnos= Alumno.objects.raw('SELECT * FROM turismo_alumno')
+    print(alumnos)
+    context={"alumnos":alumnos}
+    return render(request, 'listadoSQL.html', context)
