@@ -22,29 +22,3 @@ class Alumno(models.Model):
     def __str__(self):
         return str(self.nombre)+" "+str(self.apellido_paterno)
     
-class regsesion(models.Model):
-    rut = models.CharField(primary_key=True, max_length=10)
-    nombre_apodo = models.CharField(max_length=25)
-    nombre = models.CharField(max_length=20)
-    apellido_paterno = models.CharField(max_length=20)
-    apellido_materno = models.CharField(max_length=20)
-    fecha_nacimiento = models.DateField()
-    id_genero = models.ForeignKey('Genero', on_delete=models.CASCADE, db_column='idGenero')
-    telefono = models.CharField(max_length=45)
-    email = models.EmailField(unique=True, max_length=100, blank=True, null=True)
-    direccion = models.CharField(max_length=50, blank=True, null=True)
-    activo = models.IntegerField()
-
-    def __str__(self):
-        return f"{self.nombre} {self.apellido_paterno}"
-
-class IniSecion(AbstractUser):
-    # Remove 'nombre_apodo' field if not needed
-    # nombre_apodo = models.CharField(max_length=25)
-    telefono = models.CharField(max_length=45)
-    email = models.EmailField(unique=True, max_length=100, blank=True, null=True)
-    direccion = models.CharField(max_length=50, blank=True, null=True)
-    activo = models.IntegerField()
-
-    def __str__(self):
-        return self.username  # Assuming 'username' is the field you want to display
