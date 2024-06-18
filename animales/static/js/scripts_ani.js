@@ -87,6 +87,7 @@ function insertarCarrito(elemento) {
             <td>
                 ${elemento.precio}
             </td>
+            |
             <td>
                 <a href="#" class="borrar-elemento" data-id="${elemento.id}">X</a>
             </td>
